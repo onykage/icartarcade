@@ -159,3 +159,13 @@ Add these to your Vercel project:
 5. Connect all UI hooks to backend APIs
 6. Add error handling and loading states
 7. Implement responsive improvements for mobile
+
+## Emulator Roadmap (additional systems)
+
+- **SNES:** bsnes/higan or snes9x WASM builds; load lazily due to CPU cost.
+- **Game Boy / GBC:** wasm-boy (WASM) or gbajs (JS) for lighter option.
+- **GBA:** mGBA/VBA WASM builds; prefer mGBA for accuracy.
+- **Sega Genesis/Mega Drive:** Genesis-Plus-GX WASM or PicoDrive JS/WASM; load on demand.
+- **PSX:** pcsx-rearmed WASM exists but heavy; needs BIOS and perf/bundle care.
+- **Intellivision:** likely a custom Emscripten build of jzintv/MAME core; manual integration + BIOS handling.
+- **Atari 2600:** stella JS/WASM builds exist; straightforward to embed similarly to NES.
