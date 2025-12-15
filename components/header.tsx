@@ -14,6 +14,7 @@ import {
 import { useEffect, useRef, useState } from "react"
 import { useAuthUser } from "@/hooks/use-auth"
 import { persistGoogleToken, clearGoogleToken } from "@/lib/auth"
+import { isDevMode } from "@/lib/utils"
 
 declare global {
   interface Window {
@@ -32,6 +33,7 @@ export function Header({ onPanelToggle, activePanel }: HeaderProps) {
   const userEmail = authUser?.email || "Not signed in"
   const [gsiReady, setGsiReady] = useState(false)
   const gsiInitializedRef = useRef(false)
+  const devMode = isDevMode()
 
   const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || ""
 
@@ -143,15 +145,21 @@ export function Header({ onPanelToggle, activePanel }: HeaderProps) {
               <DropdownMenuItem onClick={() => onPanelToggle("notifications")}>Notifications</DropdownMenuItem>
               <DropdownMenuSeparator />
               <div className="px-2 py-1 space-y-2">
-                <Button
-                  size="sm"
-                  className="w-full"
-                  onClick={handleGoogleLogin}
-                  disabled={!gsiReady || !clientId}
-                  variant="secondary"
-                >
-                  Sign in with Google (popup)
-                </Button>
+                {devMode ? (
+                  <p className="text-[11px] text-amber-600">
+                    Dev mode: using local stub user. Google sign-in disabled.
+                  </p>
+                ) : (
+                  <Button
+                    size="sm"
+                    className="w-full"
+                    onClick={handleGoogleLogin}
+                    disabled={!gsiReady || !clientId}
+                    variant="secondary"
+                  >
+                    Sign in with Google (popup)
+                  </Button>
+                )}
                 <Button
                   size="sm"
                   variant="outline"
@@ -162,7 +170,7 @@ export function Header({ onPanelToggle, activePanel }: HeaderProps) {
                 >
                   Sign out (clear token)
                 </Button>
-                {!clientId && (
+                {!clientId && !devMode && (
                   <p className="text-[11px] text-destructive">
                     Missing NEXT_PUBLIC_GOOGLE_CLIENT_ID in env.
                   </p>

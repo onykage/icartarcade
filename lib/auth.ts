@@ -1,4 +1,4 @@
-import { isBrowser } from "./utils"
+import { isBrowser, isDevMode } from "./utils"
 
 export type AuthUser = {
   userUuid: string
@@ -53,8 +53,18 @@ export function loadAuthUser(): AuthUser | null {
   if (!isBrowser()) return null
   try {
     const token = window.localStorage.getItem(GOOGLE_TOKEN_STORAGE_KEY)
-    if (!token) return null
-    return decodeGoogleIdToken(token)
+    if (token) {
+      return decodeGoogleIdToken(token)
+    }
+    if (isDevMode()) {
+      return {
+        userUuid: "dev-user",
+        displayName: "Dev Tester",
+        email: "dev@example.com",
+        rawToken: null,
+      }
+    }
+    return null
   } catch {
     return null
   }

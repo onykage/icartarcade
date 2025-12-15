@@ -13,3 +13,8 @@ export function withBasePath(path: string) {
   if (!path.startsWith('/')) return `/${path}`
   return path
 }
+
+export function isDevMode() {
+  const flag = process.env.NEXT_PUBLIC_DEV_MODE
+  return flag === 'true' || flag === '1'
+}
