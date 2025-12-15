@@ -11,7 +11,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
 import { useEffect, useRef, useState } from "react"
 import { useAuthUser } from "@/hooks/use-auth"
 import { persistGoogleToken, clearGoogleToken } from "@/lib/auth"
@@ -31,7 +30,6 @@ export function Header({ onPanelToggle, activePanel }: HeaderProps) {
   const authUser = useAuthUser()
   const userName = authUser?.displayName || "Guest"
   const userEmail = authUser?.email || "Not signed in"
-  const [tokenInput, setTokenInput] = useState("")
   const [gsiReady, setGsiReady] = useState(false)
   const gsiInitializedRef = useRef(false)
 
@@ -145,39 +143,6 @@ export function Header({ onPanelToggle, activePanel }: HeaderProps) {
               <DropdownMenuItem onClick={() => onPanelToggle("notifications")}>Notifications</DropdownMenuItem>
               <DropdownMenuSeparator />
               <div className="px-2 py-1 space-y-2">
-                <div className="text-[11px] font-semibold text-muted-foreground">Paste Google ID token</div>
-                <Input
-                  value={tokenInput}
-                  onChange={(e) => setTokenInput(e.target.value)}
-                  placeholder="eyJhbGciOi..."
-                  className="h-8"
-                  spellCheck={false}
-                />
-                <Button
-                  size="sm"
-                  className="w-full"
-                  onClick={() => {
-                    if (!tokenInput.trim()) return
-                    persistGoogleToken(tokenInput.trim())
-                    setTokenInput("")
-                  }}
-                >
-                  Save token locally
-                </Button>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="w-full"
-                  onClick={() => {
-                    clearGoogleToken()
-                    setTokenInput("")
-                  }}
-                >
-                  Sign out (clear token)
-                </Button>
-                <p className="text-[11px] text-muted-foreground">
-                  Use a Google ID token for local testing. Clears on sign out.
-                </p>
                 <Button
                   size="sm"
                   className="w-full"
@@ -186,6 +151,16 @@ export function Header({ onPanelToggle, activePanel }: HeaderProps) {
                   variant="secondary"
                 >
                   Sign in with Google (popup)
+                </Button>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="w-full"
+                  onClick={() => {
+                    clearGoogleToken()
+                  }}
+                >
+                  Sign out (clear token)
                 </Button>
                 {!clientId && (
                   <p className="text-[11px] text-destructive">
