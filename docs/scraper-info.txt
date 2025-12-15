@@ -1,0 +1,30 @@
+ScreenScraper setup (for RetroPie-style scraping)
+-------------------------------------------------
+- Create a free account at https://www.screenscraper.fr (top-right “S’inscrire” / “Sign up”).
+- Confirm your email, then log in and open “Mon Compte” → “Mes Infos”.
+  You’ll see:
+    * ssid      : your username/login (string)
+    * sspass    : your password (string)
+    * ssidmd5   : MD5 hash of your username
+    * sspassmd5 : MD5 hash of your password
+  The API accepts either the plain values or the MD5 versions; hashed is preferable.
+  (English UI: Profile dropdown → My Account → My Info shows the same fields.)
+- No separate API key is required; the account credentials authenticate requests.
+- Rate limits: anonymous use is very limited; logged-in users get a higher rate. Contributing (uploads/donations) improves limits. Keep requests gentle (~1–2 per second) and cache results locally.
+
+Usage plan for this project (once credentials are available)
+------------------------------------------------------------
+- A scraper script will:
+  1) Read the game manifest (ROM file names and IDs).
+  2) Compute ROM hashes (CRC/MD5) when files are present for precise matching.
+  3) Call ScreenScraper for system NES (id 3) with your ssid/sspass (or md5 variants).
+  4) Download box art (2D) to public/boxart/<id>.jpg|png and update data/games-meta.json with boxArtLocal, rating, votes, and descriptionLong.
+- Configure credentials via environment variables when running the script, e.g.:
+  SS_USER="<your ssid>" SS_PASS="<your sspass>"
+  or
+  SS_USER_MD5="<ssidmd5>" SS_PASS_MD5="<sspassmd5>"
+
+References
+----------
+- ScreenScraper API docs: https://www.screenscraper.fr/api2/
+- WebAPI2 landing endpoint: https://www.screenscraper.fr/webapi2.php?alpha=0&numpage=0
