@@ -8,6 +8,7 @@ type GameMetaEntry = {
   romFile: string
   title: string
   statMode?: StatMode | null
+  scoreScrape?: boolean | null
   descriptionShort?: string | null
   descriptionLong?: string | null
   boxArtLocal?: string | null
@@ -29,6 +30,7 @@ export type NesGame = {
   votes?: number | null
   boxArtSource?: string | null
   statMode: StatMode
+  scoreScrape: boolean
 }
 
 export type NesInstance = {
@@ -48,6 +50,7 @@ const normalizeStatMode = (value: StatMode | null | undefined): StatMode => {
 
 export const NES_GAMES: NesGame[] = Object.values(GAME_META).map((meta) => {
   const statMode = normalizeStatMode(meta.statMode ?? null)
+  const scoreScrape = meta.scoreScrape ?? (statMode === 'score')
 
   return {
     id: meta.id,
@@ -61,6 +64,7 @@ export const NES_GAMES: NesGame[] = Object.values(GAME_META).map((meta) => {
     votes: meta.votes ?? null,
     boxArtSource: meta.boxArtSource ?? null,
     statMode,
+    scoreScrape,
   }
 })
 

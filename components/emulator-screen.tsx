@@ -75,7 +75,7 @@ export function EmulatorScreen({ gameId, onClose }: EmulatorScreenProps) {
   const scoreOwnerId = authUser?.userUuid ?? null
   const isAuthed = !!scoreOwnerId
   const { toast } = useToast()
-  const scoresEnabled = game?.statMode === "score"
+  const scoresEnabled = game?.statMode === "score" && game.scoreScrape !== false
   const initialGuestNoticeSeen = useMemo(() => {
     if (typeof window === "undefined") return false
     try {

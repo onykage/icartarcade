@@ -10,7 +10,8 @@
     "rating": null,
     "votes": null,
     "boxArtLocal": "images/boxart/nes/Super_Mario_Bros._box.png",
-    "boxArtSource": null
+    "boxArtSource": null,
+    "scoreScrape": true
   },
   "zelda1": {
     "id": "zelda1",
@@ -49,7 +50,8 @@
     "rating": null,
     "votes": null,
     "boxArtLocal": "images/boxart/nes/Megaman2_box.png",
-    "boxArtSource": null
+    "boxArtSource": null,
+    "scoreScrape": true
   },
   "metroid": {
     "id": "metroid",
@@ -62,7 +64,8 @@
     "rating": null,
     "votes": null,
     "boxArtLocal": "images/boxart/nes/Metroid_box.png",
-    "boxArtSource": null
+    "boxArtSource": null,
+    "scoreScrape": true
   },
   "contra": {
     "id": "contra",
@@ -75,7 +78,8 @@
     "rating": null,
     "votes": null,
     "boxArtLocal": "images/boxart/nes/Contra_box.png",
-    "boxArtSource": null
+    "boxArtSource": null,
+    "scoreScrape": true
   },
   "castlevan1": {
     "id": "castlevan1",
@@ -88,7 +92,8 @@
     "rating": null,
     "votes": null,
     "boxArtLocal": "images/boxart/nes/Castlevania1_box.png",
-    "boxArtSource": null
+    "boxArtSource": null,
+    "scoreScrape": true
   },
   "excitebike": {
     "id": "excitebike",
@@ -101,20 +106,22 @@
     "rating": null,
     "votes": null,
     "boxArtLocal": "images/boxart/nes/Excitebike_box.png",
-    "boxArtSource": null
+    "boxArtSource": null,
+    "scoreScrape": true
   },
   "smb3": {
     "id": "smb3",
     "romFile": "smb3.nes",
     "title": "Super Mario Bros. 3",
     "statMode": "score",
-    "descriptionShort": "Mario’s final NES outing",
-    "descriptionLong": "Mario’s final NES outing. Explore world maps, use power suits, and face Bowser in diverse stages.",
+    "descriptionShort": "Mario\u2019s final NES outing",
+    "descriptionLong": "Mario\u2019s final NES outing. Explore world maps, use power suits, and face Bowser in diverse stages.",
     "vimmId": null,
     "rating": null,
     "votes": null,
     "boxArtLocal": "images/boxart/nes/Super_Mario_Bros._3_box.png",
-    "boxArtSource": null
+    "boxArtSource": null,
+    "scoreScrape": true
   },
   "drmario": {
     "id": "drmario",
@@ -127,7 +134,8 @@
     "rating": null,
     "votes": null,
     "boxArtLocal": "images/boxart/nes/Dr._Mario_box.png",
-    "boxArtSource": null
+    "boxArtSource": null,
+    "scoreScrape": true
   },
   "kidicarus": {
     "id": "kidicarus",
@@ -140,7 +148,8 @@
     "rating": null,
     "votes": null,
     "boxArtLocal": "images/boxart/nes/Kid_Icarus_box.png",
-    "boxArtSource": null
+    "boxArtSource": null,
+    "scoreScrape": true
   },
   "goonies2": {
     "id": "goonies2",
@@ -153,7 +162,8 @@
     "rating": null,
     "votes": null,
     "boxArtLocal": "images/boxart/nes/Goonies2.png",
-    "boxArtSource": null
+    "boxArtSource": null,
+    "scoreScrape": true
   },
   "1942": {
     "id": "1942",
@@ -166,7 +176,8 @@
     "rating": null,
     "votes": null,
     "boxArtLocal": "images/boxart/nes/1942_box.png",
-    "boxArtSource": null
+    "boxArtSource": null,
+    "scoreScrape": true
   },
   "1943": {
     "id": "1943",
@@ -179,7 +190,8 @@
     "rating": null,
     "votes": null,
     "boxArtLocal": "images/boxart/nes/1943_box.png",
-    "boxArtSource": null
+    "boxArtSource": null,
+    "scoreScrape": true
   },
   "arkanoid": {
     "id": "arkanoid",
@@ -191,21 +203,9 @@
     "vimmId": null,
     "rating": null,
     "votes": null,
-    "boxArtLocal": null,
-    "boxArtSource": null
-  },
-  "castlevan3": {
-    "id": "castlevan3",
-    "romFile": "castlevan3.nes",
-    "title": "Castlevania III: Dracula's Curse",
-    "statMode": "progress",
-    "descriptionShort": "Branching gothic quest",
-    "descriptionLong": "Branching gothic quest. Swap allies and fight through multiple routes to stop Dracula.",
-    "vimmId": null,
-    "rating": null,
-    "votes": null,
-    "boxArtLocal": null,
-    "boxArtSource": null
+    "boxArtLocal": "images/boxart/nes/Arkanoid_box.png",
+    "boxArtSource": null,
+    "scoreScrape": true
   },
   "donkeykong": {
     "id": "donkeykong",
@@ -217,8 +217,9 @@
     "vimmId": null,
     "rating": null,
     "votes": null,
-    "boxArtLocal": null,
-    "boxArtSource": null
+    "boxArtLocal": "images/boxart/nes/Donkey_Kong_box.jpg",
+    "boxArtSource": null,
+    "scoreScrape": true
   },
   "doubledragon": {
     "id": "doubledragon",
@@ -230,7 +231,7 @@
     "vimmId": null,
     "rating": null,
     "votes": null,
-    "boxArtLocal": null,
+    "boxArtLocal": "images/boxart/nes/double_dragon_box.jpg",
     "boxArtSource": null
   },
   "ducktales": {
@@ -243,7 +244,7 @@
     "vimmId": null,
     "rating": null,
     "votes": null,
-    "boxArtLocal": null,
+    "boxArtLocal": "images/boxart/nes/DuckTales_box.png",
     "boxArtSource": null
   },
   "galaga": {
@@ -256,8 +257,9 @@
     "vimmId": null,
     "rating": null,
     "votes": null,
-    "boxArtLocal": null,
-    "boxArtSource": null
+    "boxArtLocal": "images/boxart/nes/galaga_box.png",
+    "boxArtSource": null,
+    "scoreScrape": true
   },
   "ghostsngoblins": {
     "id": "ghostsngoblins",
@@ -269,7 +271,7 @@
     "vimmId": null,
     "rating": null,
     "votes": null,
-    "boxArtLocal": null,
+    "boxArtLocal": "images/boxart/nes/GhostsnGoblins_box.png",
     "boxArtSource": null
   },
   "megaman1": {
@@ -282,7 +284,7 @@
     "vimmId": null,
     "rating": null,
     "votes": null,
-    "boxArtLocal": null,
+    "boxArtLocal": "images/boxart/nes/Mega_Man_1_box.png",
     "boxArtSource": null
   },
   "proam": {
@@ -295,21 +297,9 @@
     "vimmId": null,
     "rating": null,
     "votes": null,
-    "boxArtLocal": null,
-    "boxArtSource": null
-  },
-  "punchout": {
-    "id": "punchout",
-    "romFile": "punchout.nes",
-    "title": "Punch-Out!!",
-    "statMode": "progress",
-    "descriptionShort": "Boxing puzzle bouts",
-    "descriptionLong": "Boxing puzzle bouts. Learn opponent patterns, dodge, and counter to take Little Mac to the title.",
-    "vimmId": null,
-    "rating": null,
-    "votes": null,
-    "boxArtLocal": "punch-out-nes-box-art.jpg",
-    "boxArtSource": null
+    "boxArtLocal": "images/boxart/nes/RC_Pro_Am_box.png",
+    "boxArtSource": null,
+    "scoreScrape": true
   },
   "skyshark": {
     "id": "skyshark",
@@ -322,7 +312,8 @@
     "rating": null,
     "votes": null,
     "boxArtLocal": "images/boxart/nes/sky_shark_box.png",
-    "boxArtSource": null
+    "boxArtSource": null,
+    "scoreScrape": true
   },
   "tcsurf": {
     "id": "tcsurf",
@@ -335,6 +326,7 @@
     "rating": null,
     "votes": null,
     "boxArtLocal": "images/boxart/nes/tcsurf_box.png",
-    "boxArtSource": null
+    "boxArtSource": null,
+    "scoreScrape": true
   }
 }
