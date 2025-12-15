@@ -12,3 +12,13 @@ yarn-error.log*
 pnpm-debug.log*
 *.tsbuildinfo
 .DS_Store
+
+# Local ROMs and art assets (kept locally, not in repo)
+public/roms/
+public/boxart/
+public/images/boxart/
+public/**/*box-art*.jpg
+public/**/*box-art*.png
+
+# Scraper utilities should remain local-only
+scripts/scrape-*.mjs
