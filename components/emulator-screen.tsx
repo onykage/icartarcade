@@ -1137,7 +1137,7 @@ export function EmulatorScreen({ gameId, onClose }: EmulatorScreenProps) {
       <div className="grid gap-6 lg:grid-cols-[1fr_300px]">
         <div className="space-y-4">
       <Card className="overflow-hidden bg-black p-0">
-        <div className="relative aspect-[4/3] w-full bg-gradient-to-br from-secondary/20 to-primary/20">
+        <div className="relative aspect-[4/3] w-full max-h-[750px] max-w-[1000px] mx-auto bg-gradient-to-br from-secondary/20 to-primary/20">
           <div id={containerId} className="relative h-full w-full" />
           {status !== "Running" && (
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/50">
